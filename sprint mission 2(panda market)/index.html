@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>판다마켓 로그인</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="brand">
+      <div class="brand__logo" aria-hidden="true">🐼</div>
+      <h1 class="brand__title">판다마켓</h1>
+    </header>
+
+    <form class="form" action="#" method="post">
+      <label class="field">
+        <span class="field__label">이메일</span>
+        <input class="input" type="email" placeholder="이메일을 입력해주세요" required />
+      </label>
+
+      <label class="field">
+        <span class="field__label">비밀번호</span>
+        <div class="pw">
+          <input class="input pw__input" id="pw" type="password" placeholder="비밀번호를 입력해주세요" required />
+          <button class="pw__toggle" type="button" id="pwToggle" aria-label="비밀번호 보기/숨기기">👁️</button>
+        </div>
+      </label>
+
+      <button class="login-btn" type="submit">로그인</button>
+    </form>
+
+    <section class="social" aria-label="간편 로그인">
+      <span class="social__text">간편 로그인하기</span>
+      <div class="social__icons">
+        <a class="icon icon--google" href="#" aria-label="구글 로그인">G</a>
+        <a class="icon icon--kakao" href="#" aria-label="카카오 로그인">TALK</a>
+      </div>
+    </section>
+
+    <!-- ✅ 캡처에 있는 하단 텍스트 -->
+    <p class="signup">
+      <span class="signup__text">판다마켓이 처음이신가요?</span>
+      <a class="signup__link" href="#">회원가입</a>
+    </p>
+  </main>
+
+  <script>
+    const pw = document.getElementById("pw");
+    const toggle = document.getElementById("pwToggle");
+    toggle.addEventListener("click", () => {
+      pw.type = pw.type === "password" ? "text" : "password";
+    });
+  </script>
+</body>
+</html>

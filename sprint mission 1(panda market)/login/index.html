@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>판다마켓</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="has-gnb">
+  <header class="gnb">
+    <div class="shell gnb__inner">
+      <a class="gnb__brand" href="/">
+        <span class="brandmark">🐼</span>
+        <span class="brandtext">판다마켓</span>
+      </a>
+      <a class="btn btn--primary btn--sm" href="/login">로그인</a>
+    </div>
+  </header>
+
+  <main class="auth">
+    <div class="auth__wrap">
+      <div class="auth__brand">
+        <span class="brandmark" aria-hidden="true">🐼</span>
+        <h1 class="auth__title">판다마켓</h1>
+      </div>
+
+      <form>
+        <label class="field">
+          <span class="field__label">이메일</span>
+          <input class="input" type="email" placeholder="이메일을 입력해주세요" />
+        </label>
+
+        <label class="field" style="margin-top: 14px;">
+          <span class="field__label">비밀번호</span>
+          <div class="pw">
+            <input class="input pw__input" id="pw" type="password" placeholder="비밀번호를 입력해주세요" />
+            <button class="pw__toggle" type="button" id="pwToggle">👁️</button>
+          </div>
+        </label>
+
+        <button class="login-btn" type="button" style="margin-top: 14px;">로그인</button>
+      </form>
+
+      <section class="social" aria-label="간편 로그인">
+        <span>간편 로그인하기</span>
+        <div class="social__icons">
+          <a class="icon" href="#" aria-label="구글 로그인">G</a>
+          <a class="icon icon--kakao" href="#" aria-label="카카오 로그인">TALK</a>
+        </div>
+      </section>
+
+      <p class="signup">
+        <span>판다마켓이 처음이신가요?</span>
+        <a class="signup__link" href="#">회원가입</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const pw = document.getElementById("pw");
+    const toggle = document.getElementById("pwToggle");
+    toggle?.addEventListener("click", () => {
+      pw.type = pw.type === "password" ? "text" : "password";
+    });
+  </script>
+</body>
+</html>

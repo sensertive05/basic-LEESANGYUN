@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>판다마켓</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="has-gnb">
+  <!-- ✅ Global Navigation Bar (고정) -->
+  <header class="gnb" role="banner">
+    <div class="shell gnb__inner">
+      <a class="gnb__brand" href="/" aria-label="판다마켓 홈으로">
+        <span class="brandmark" aria-hidden="true">🐼</span>
+        <span class="brandtext">판다마켓</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/login">로그인</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ✅ Hero (하늘색 배경은 화면 꽉, 내부는 1920 기준 고정) -->
+    <section class="hero">
+      <div class="shell hero__inner">
+        <div class="hero__copy">
+          <h1 class="hero__title">
+            일상의 모든 물건을<br />
+            거래해 보세요
+          </h1>
+          <a class="btn btn--primary" href="/items">구경하러 가기</a>
+        </div>
+
+        <!-- 이미지 없으면 일단 더미 일러스트 -->
+        <div class="hero__art" aria-hidden="true">
+          <div class="art art--hero">
+            <div class="art__hill"></div>
+            <div class="art__panda">🐼</div>
+            <div class="art__tree art__tree--1"></div>
+            <div class="art__tree art__tree--2"></div>
+            <div class="art__block"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Feature Cards -->
+    <section class="features">
+      <div class="shell features__inner">
+        <!-- 카드 1 -->
+        <article class="plan-card plan-card--reverse">
+          <div class="plan-card__text">
+            <span class="eyebrow">Hot</span>
+            <h2 class="plan-card__title">인기 상품을<br />편리하게 확인해보세요</h2>
+            <p class="plan-card__desc">
+              지금 사람들이 많이 보는 물건을 한 눈에 확인하고<br />
+              원하는 상품을 빠르게 찾아보세요.
+            </p>
+          </div>
+
+          <div class="plan-card__art" aria-hidden="true">
+            <div class="art art--hot">
+              <div class="art__tile art__tile--big"></div>
+              <div class="art__tile art__tile--shirt"></div>
+              <div class="art__heart">💗</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 카드 2 (캡처에서 선택된 카드: 988x444 / gap 64 / flex center) -->
+        <article class="plan-card">
+          <div class="plan-card__text">
+            <span class="eyebrow">Search</span>
+            <h2 class="plan-card__title">구매를 원하는<br />상품을 검색하세요</h2>
+            <p class="plan-card__desc">
+              구매하고 싶은 물건은 검색해서<br />
+              쉽게 찾아보세요.
+            </p>
+          </div>
+
+          <div class="plan-card__art" aria-hidden="true">
+            <div class="art art--search">
+              <div class="art__tile art__tile--1"></div>
+              <div class="art__tile art__tile--2"></div>
+              <div class="art__tile art__tile--3"></div>
+              <div class="art__glass">🔍</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 카드 3 -->
+        <article class="plan-card plan-card--reverse">
+          <div class="plan-card__text">
+            <span class="eyebrow">Sell</span>
+            <h2 class="plan-card__title">판매를 원하는<br />상품을 등록하세요</h2>
+            <p class="plan-card__desc">
+              판매할 물건의 정보만 입력하면<br />
+              간단하게 등록할 수 있어요.
+            </p>
+          </div>
+
+          <div class="plan-card__art" aria-hidden="true">
+            <div class="art art--sell">
+              <div class="art__folder"></div>
+              <div class="art__note"></div>
+              <div class="art__tag"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ✅ Bottom Banner (1920x540 느낌) -->
+    <section class="bottom-banner" aria-label="하단 배너">
+      <div class="shell bottom-banner__inner">
+        <div class="bottom-banner__copy">
+          <h2 class="bottom-banner__title">일몰 수 있는<br />판다마켓 중고 거래</h2>
+        </div>
+
+        <div class="bottom-banner__art" aria-hidden="true">
+          <div class="art art--bottom">
+            <div class="art__hill"></div>
+            <div class="art__pandas">🐼💬🐼</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <span class="footer__left">codeit-2024</span>
+
+      <nav class="footer__center" aria-label="푸터 링크">
+        <a class="footer__link" href="/privacy">Privacy Policy</a>
+        <a class="footer__link" href="/faq">FAQ</a>
+      </nav>
+
+      <div class="footer__right" aria-label="SNS">
+        <a class="sns" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          f
+        </a>
+        <a class="sns" href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          x
+        </a>
+        <a class="sns" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          ▶
+        </a>
+        <a class="sns" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          ◎
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

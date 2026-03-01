@@ -1,0 +1,533 @@
+:root{
+  --bg: #FCFCFC;
+  --white: #FFFFFF;
+
+  /* 캡처에 보이던 톤 */
+  --primary-100: #CFE7FF;   /* Primary/100 느낌 */
+  --primary-500: #52A2FF;   /* 캡처에 있던 #52A2FF */
+  --secondary-700: #222327; /* 캡처에 있던 #222327 */
+  --secondary-400: #9CA3AF;
+  --line: #E5E7EB;
+
+  --font: Pretendard, system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+
+  --gnb-h: 72px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{ height: 100%; }
+
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--secondary-700);
+  background: var(--bg);
+}
+
+a{ color: inherit; text-decoration: none; }
+button{ font-family: inherit; }
+a, button{ cursor: pointer; }
+
+/* ✅ 내부 고정(최대 1920) + 좌우 200px 유지 */
+.shell{
+  width: min(1920px, 100%);
+  margin: 0 auto;
+  padding: 0 200px; /* 요구사항: 1920보다 작아져도 200 유지 */
+}
+
+/* GNB 때문에 콘텐츠가 가려지지 않게 */
+.has-gnb{
+  padding-top: var(--gnb-h);
+}
+
+/* ---------------------------
+   GNB (고정)
+--------------------------- */
+.gnb{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--gnb-h);
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  z-index: 999;
+}
+
+.gnb__inner{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gnb__brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandmark{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--primary-500);
+  color: #fff;
+  font-size: 18px;
+}
+
+.brandtext{
+  font-weight: 800;
+  color: var(--primary-500);
+  letter-spacing: -0.02em;
+}
+
+/* ---------------------------
+   Buttons
+--------------------------- */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-weight: 700;
+}
+
+.btn--sm{
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.btn--primary{
+  background: var(--primary-500);
+  color: #fff;
+}
+
+.btn--primary:active{
+  transform: translateY(1px);
+}
+
+/* ---------------------------
+   Hero
+--------------------------- */
+.hero{
+  background: var(--primary-100); /* ✅ 배경은 화면 꽉 */
+}
+
+.hero__inner{
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero__title{
+  margin: 0 0 18px;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.hero__art{
+  flex: 0 0 740px;
+  height: 280px;
+  display: grid;
+  place-items: center;
+}
+
+/* 더미 일러스트 */
+.art--hero{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.art--hero .art__hill{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-20%);
+  width: 520px;
+  height: 220px;
+  background: #D89A63;
+  border-radius: 260px 260px 0 0;
+}
+.art--hero .art__panda{
+  position: absolute;
+  right: 240px;
+  bottom: 120px;
+  font-size: 44px;
+}
+.art--hero .art__tree{
+  position: absolute;
+  bottom: 120px;
+  width: 24px;
+  height: 24px;
+  background: #4CAF50;
+  border-radius: 999px;
+}
+.art--hero .art__tree--1{ right: 170px; }
+.art--hero .art__tree--2{ right: 130px; }
+.art--hero .art__block{
+  position: absolute;
+  left: 120px;
+  bottom: 150px;
+  width: 60px;
+  height: 60px;
+  background: #F2C6A0;
+  border-radius: 10px;
+  transform: rotate(-12deg);
+}
+
+/* ---------------------------
+   Features / Plan cards
+--------------------------- */
+.features{
+  background: var(--bg);
+}
+
+.features__inner{
+  padding: 120px 0;
+  display: grid;
+  gap: 138px; /* 캡처에서 카드 사이 여백 느낌 */
+}
+
+/* ✅ 캡처 수치 핵심: 988x444 / flex / center / gap 64 */
+.plan-card{
+  width: 988px;
+  height: 444px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.plan-card--reverse{
+  flex-direction: row-reverse;
+}
+
+.plan-card__text{
+  width: 360px;
+}
+
+.eyebrow{
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-500);
+  margin-bottom: 10px;
+}
+
+.plan-card__title{
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.plan-card__desc{
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(34,35,39,0.75);
+}
+
+/* 카드 이미지 더미 */
+.plan-card__art{
+  width: 520px;
+  height: 320px;
+  border-radius: 18px;
+  background: #F4F6F9;
+  position: relative;
+  overflow: hidden;
+}
+
+/* search 느낌 */
+.art--search .art__tile{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  background: #E8EDF6;
+}
+.art--search .art__tile--1{ left: 60px; top: 70px; opacity: .55; }
+.art--search .art__tile--2{ left: 170px; top: 70px; opacity: .35; }
+.art--search .art__tile--3{ left: 280px; top: 70px; opacity: .25; }
+.art--search .art__glass{
+  position: absolute;
+  right: 90px;
+  bottom: 80px;
+  font-size: 56px;
+}
+
+/* hot 느낌 */
+.art--hot .art__tile--big{
+  position: absolute;
+  left: 70px; top: 60px;
+  width: 240px; height: 200px;
+  border-radius: 18px;
+  background: #E8EDF6;
+}
+.art--hot .art__tile--shirt{
+  position: absolute;
+  left: 140px; top: 95px;
+  width: 120px; height: 120px;
+  border-radius: 16px;
+  background: #DDEBFF;
+}
+.art--hot .art__heart{
+  position: absolute;
+  left: 290px; top: 80px;
+  font-size: 22px;
+}
+
+/* sell 느낌 */
+.art--sell .art__folder{
+  position: absolute;
+  left: 70px; bottom: 80px;
+  width: 260px; height: 160px;
+  border-radius: 18px;
+  background: #DDEBFF;
+}
+.art--sell .art__note{
+  position: absolute;
+  left: 290px; bottom: 120px;
+  width: 160px; height: 140px;
+  border-radius: 18px;
+  background: #E8EDF6;
+}
+.art--sell .art__tag{
+  position: absolute;
+  left: 250px; bottom: 210px;
+  width: 70px; height: 36px;
+  border-radius: 12px;
+  background: #FFD1E6;
+}
+
+/* ---------------------------
+   Bottom banner (1920x540)
+--------------------------- */
+.bottom-banner{
+  background: var(--primary-100); /* ✅ 배경은 화면 꽉 */
+}
+
+.bottom-banner__inner{
+  height: 540px; /* 캡처에 있던 1920x540 반영 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-banner__title{
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.bottom-banner__art{
+  width: 700px;
+  height: 280px;
+}
+
+.art--bottom{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.art--bottom .art__hill{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-30%);
+  width: 520px;
+  height: 220px;
+  background: #D89A63;
+  border-radius: 260px 260px 0 0;
+}
+.art--bottom .art__pandas{
+  position: absolute;
+  right: 220px;
+  bottom: 120px;
+  font-size: 44px;
+}
+
+/* ---------------------------
+   Footer (좌 200 / 우 200 유지, 가운데는 가운데)
+--------------------------- */
+.footer{
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+
+.footer__inner{
+  height: 88px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.footer__left{
+  justify-self: start;
+  font-size: 14px;
+  color: rgba(34,35,39,0.7);
+}
+
+.footer__center{
+  justify-self: center;
+  display: inline-flex;
+  gap: 28px;
+}
+
+.footer__link{
+  font-size: 14px;
+  color: rgba(34,35,39,0.85);
+}
+
+.footer__link:hover{
+  text-decoration: underline;
+}
+
+.footer__right{
+  justify-self: end;
+  display: inline-flex;
+  gap: 12px;
+}
+
+.sns{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+/* ---------------------------
+   (선택) 로그인 페이지 스타일도 통합해두기
+   /login에서 사용
+--------------------------- */
+.auth{
+  min-height: calc(100vh - var(--gnb-h));
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+}
+
+.auth__wrap{
+  width: 640px;
+  display: grid;
+  gap: 18px;
+}
+
+.auth__brand{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.auth__title{
+  margin: 0;
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--primary-500);
+  letter-spacing: -0.02em;
+}
+
+.field{ display: grid; gap: 8px; }
+.field__label{ font-size: 13px; font-weight: 700; }
+
+.input{
+  height: 48px;
+  border: 0;
+  outline: none;
+  border-radius: 12px;
+  background: #F3F4F6;
+  padding: 0 14px;
+  font-size: 14px;
+}
+.input::placeholder{ color: var(--secondary-400); }
+
+.pw{ position: relative; }
+.pw__input{ padding-right: 44px; }
+.pw__toggle{
+  position: absolute;
+  right: 10px; top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  opacity: .6;
+}
+
+.login-btn{
+  display: flex;
+  width: 640px;
+  height: 56px;
+  padding: 16px 124px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border: 0;
+  border-radius: 40px;
+  background: var(--secondary-400);
+  color: #fff;
+  font-weight: 700;
+}
+
+.social{
+  width: 640px;
+  background: #EAF4FF;
+  border-radius: 10px;
+  padding: 8px 16px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social__icons{ display: flex; gap: 10px; }
+
+.icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-weight: 800;
+}
+
+.icon--kakao{
+  background: #FEE500;
+  border-color: #FEE500;
+  font-size: 10px;
+}
+
+.signup{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--secondary-700);
+}
+
+.signup__link{
+  color: var(--primary-500);
+  font-weight: 700;
+}
